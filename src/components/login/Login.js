@@ -12,9 +12,7 @@ class loginComp extends React.Component {
         let username = this.refs.name.value;
         let password = this.refs.password.value;
         console.log("用户名："+username+"密码："+password);
-        fetch('http://rap.taobao.org/mockjsdata/30695/login ', {
-            method: 'POST',
-        })
+        fetch('http://rap.taobao.org/mockjsdata/30695/login ', {method: 'POST',})
             .then(res=>res.json())
             .then(res=>{
                 console.log(res)
