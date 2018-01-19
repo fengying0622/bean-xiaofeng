@@ -25,6 +25,8 @@ class loginComp extends React.Component {
     render() {
         console.log(this.props);
         return (
+            <div>
+                <p>Head</p>
             <div className="App">
                 <form>
                     <input type="text" ref="name" /><br/>
@@ -32,6 +34,8 @@ class loginComp extends React.Component {
                 </form>
 
                 <button onClick={this.userLogin}>提交</button>
+            </div>
+                <p>foot</p>
             </div>
         );
     }

@@ -16,6 +16,7 @@ import LoginControl from "./components/test/LoginControl"
 import FilterableProductTable from "./components/test/ThinkWithReact"
 import Clock from "./components/test/Clock"
 import Toggle from "./components/test/Toggle"
+import Todo from "./components/test/Todo"
 const middleware = [ thunk ];
 if (process.env.NODE_ENV !== 'production') {
     middleware.push(createLogger());
@@ -33,13 +34,14 @@ render(
     <Provider store={store}>
         <Router >
             <div>
-                <Route path="/" component={loginComp}/>
+                <Route exact path="/" component={loginComp} />
                 <Route path="/show" component={App}/>
                 <Route path="/shop" component={Shop}/>
                 <Route path="/login" component={LoginControl}/>
                 <Route path="/demo" component={FilterableProductTable}/>
                 <Route path="/clock" component={Clock} />
                 <Route path="/toggle" component={Toggle} />
+                <Route path="/todo" component={Todo} />
             </div>
         </Router>
 

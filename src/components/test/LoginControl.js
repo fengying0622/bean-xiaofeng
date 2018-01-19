@@ -2,6 +2,7 @@
  * Created by Administrator on 2018/1/8.
  */
 import React from "react";
+import "../../styles/test.css"
 
 class LoginControl extends React.Component {
     constructor(props) {
@@ -26,18 +27,12 @@ class LoginControl extends React.Component {
 
     render() {
         console.log(this.state)
-
         let isLoggedIn = this.state.isLoggedIn;
-        let button =null;
-        if (isLoggedIn){
-            button = <LogoutButton onClick={this.logoutClick} />
-        }else{
-            button = <LoginButton onClick={this.loginClick} />
-        }
         return (
             <div>
                 <Greeting isLoggedIn={isLoggedIn} />
-                {button}
+                <WarningBanner isLoggedIn={isLoggedIn}/>
+                {isLoggedIn ? <LogoutButton onClick={this.logoutClick} /> : <LoginButton onClick={this.loginClick} />}
             </div>
         )
     }
@@ -76,4 +71,12 @@ function LogoutButton(props) {
     );
 }
 
+function WarningBanner(props){
+    if(props.isLoggedIn){
+        return null;
+    }
+    return (
+        <div className="warning">请注册!</div>
+    )
+}
 export default LoginControl
